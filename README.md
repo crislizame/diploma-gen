@@ -1,1 +1,1 @@
-# diploma-gen
+# Generador de Diplomas para Docentes
