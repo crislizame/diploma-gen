@@ -24,7 +24,7 @@ $( document ).ready(function(){
                 processData: false,
                 type: 'POST',
                 success: function(data){
-                    VentanaCentrada('./pdf/documentos/ver_factura.php?nombrear='+data,'Factura','','1024','768','true');
+                    VentanaCentrada('./pdf/documentos/ver_diploma.php?nombrear='+data,'Factura','','1024','768','true');
 
 
 

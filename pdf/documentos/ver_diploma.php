@@ -2,10 +2,29 @@
 ini_set('display_errors', 0);
 $namarch = urldecode($_GET['nombrear']);
 session_start();
+date_default_timezone_set('America/Guayaquil');
+
 require_once '../../Classes/PHPExcel.php';
 require_once('../../Classes/PHPExcel/Reader/Excel2007.php');
 $archivo = $namarch;
+function crearnombre($tipo){
+switch (ucfirst($tipo)) {
+    case 'O':
+       $tipazo = "oro";
+        break;
+    case 'P':
+       $tipazo = "plata";
+        break;
+    default:
+        $tipazo = "diploma";
+    break;
+}
 
+$cadena = $tipazo."_".date('YmdHi');
+
+return $cadena;
+
+}
 $objReader = new PHPExcel_Reader_Excel2007();
 $objPHPExcel = $objReader->load('../../upload/'.$namarch);
 $sheet = $objPHPExcel->getSheet(0);
@@ -31,6 +50,8 @@ for ($row = 2; $row <= $highestRow; $row++){
 
     $fila = $fila + 1;
 }
+
+$obtipo = crearnombre($tipo);
 $session_id= session_id();
 $arrayexcel=$arrayall;
 $conadorall=count($arrayexcel['nombre']);
@@ -41,7 +62,7 @@ $fontactual=($fletmax-$fontnormal)-$fontnormal;
 require_once(dirname(__FILE__).'/../html2pdf.class.php');
 // get the HTML
 ob_start();
-include(dirname(__FILE__).'/res/ver_factura_html.php');
+include(dirname(__FILE__).'/res/ver_diploma_html.php');
 $content = ob_get_clean();
 
 try
@@ -56,7 +77,7 @@ try
     // send the PDF
 
     //  $html2pdf->Output('../../upload/Factura.pdf','F');
-    $html2pdf->Output('Factura.pdf');
+    $html2pdf->Output($obtipo.'.pdf');
 
 }
 catch(HTML2PDF_exception $e) {

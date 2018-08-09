@@ -171,7 +171,7 @@ switch (ucwords($tipo)) {
                 <p style="margin-left: 80px;margin-bottom:0;font-size: 12px;font-weight: bold">Confiere a la
                     Presente</p>
                 <p style="margin-top: 0px;margin-bottom:10px;margin-left: 120px;text-align: center;font-size: 35px;letter-spacing: 30px;">
-                    DIPLOMA</p>
+                    DIPLOMA <?php echo $valorrr; ?></p>
                 <p style="margin-top: 0px;margin-left: 80px;margin-bottom:15PX;font-size: 15px;font-weight: bold">Al
                     Alumno:</p>
                 <p style="margin-top: 0px;margin-bottom:10px;margin-left: 10px;text-align: center;font-size:<?php echo abs($fontactual2); ?>px;font-weight: bold"><?php echo $nombrazo2; ?></p>
