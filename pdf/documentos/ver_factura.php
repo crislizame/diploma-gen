@@ -19,12 +19,14 @@ for ($row = 2; $row <= $highestRow; $row++){
     $motivo = $sheet->getCell("D2");
     $doc1 = $sheet->getCell("E2");
     $doc2 = $sheet->getCell("F2");
+    $tipo = $sheet->getCell("G2");
     $arrayall["nombre"][$fila] =$nombre;
     $arrayall['nota'][$fila] = $nota;
     $arrayall['date'] = $date;
     $arrayall['motivo'] =$motivo;
     $arrayall['doc1'] = $doc1;
     $arrayall['doc2'] = $doc2;
+    $arrayall['tipo'] = $tipo;
 
     $fila = $fila + 1;
 }

@@ -41,6 +41,7 @@ $fecha=$arrayexcel['date'];
 $motivo=$arrayexcel['motivo'];
 $doc1=$arrayexcel['doc1'];
 $doc2=$arrayexcel['doc2'];
+$tipo=$arrayexcel['tipo'];
 $nombrazo2=$arrayexcel['nombre'][$i+1];
 $notaza2=$arrayexcel['nota'][$i+1];
 $fletmax=strlen($arrayexcel['nombre'][$i]);
@@ -48,9 +49,21 @@ $fletmax2=strlen($arrayexcel['nombre'][$i+1]);
 $fontactual=($fletmax-$fontnormal)-$fontnormal;
 $fontactual2=($fletmax2-$fontnormal2)-$fontnormal2;
 
+switch (ucwords($tipo)) {
+    case 'O':
 ?>
 <page backimg="../../img/DD.png" backimgw="100%" backtop="2mm" backbottom="2mm" backleft="15mm" backright="30mm" style="font-size: 12pt; font-family: arial" >
+<?php
+        break;
+    
+    case 'p':
+?>
+<page backimg="../../img/DD2.png" backimgw="100%" backtop="2mm" backbottom="2mm" backleft="15mm" backright="30mm" style="font-size: 12pt; font-family: arial" >
+<?php
+        break;
+}
 
+?>
 
     <table style="text-align: left; margin-left: 0px; margin-right: 0px;" width="100%" cellpadding="0" cellspacing="0">
         <tbody>
