@@ -1,10 +1,11 @@
 <?php
 ini_set('display_errors', 0);
-$namarch = $_GET['nombrear'];
+$namarch = urldecode($_GET['nombrear']);
 session_start();
 require_once '../../Classes/PHPExcel.php';
 require_once('../../Classes/PHPExcel/Reader/Excel2007.php');
 $archivo = $namarch;
+
 $objReader = new PHPExcel_Reader_Excel2007();
 $objPHPExcel = $objReader->load('../../upload/'.$namarch);
 $sheet = $objPHPExcel->getSheet(0);
