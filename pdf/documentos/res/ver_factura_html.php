@@ -56,7 +56,7 @@ switch (ucwords($tipo)) {
 <?php
         break;
     
-    case 'p':
+    case 'P':
 ?>
 <page backimg="../../img/DD2.png" backimgw="100%" backtop="2mm" backbottom="2mm" backleft="15mm" backright="30mm" style="font-size: 12pt; font-family: arial" >
 <?php
