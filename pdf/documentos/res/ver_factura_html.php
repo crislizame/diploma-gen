@@ -51,19 +51,16 @@ $fontactual2=($fletmax2-$fontnormal2)-$fontnormal2;
 
 switch (ucwords($tipo)) {
     case 'O':
-?>
-<page backimg="../../img/DD.png" backimgw="100%" backtop="2mm" backbottom="2mm" backleft="15mm" backright="30mm" style="font-size: 12pt; font-family: arial" >
-<?php
+    $imgurl = "../../img/DD.png";
         break;
     
     case 'P':
-?>
-<page backimg="../../img/DD2.png" backimgw="100%" backtop="2mm" backbottom="2mm" backleft="15mm" backright="30mm" style="font-size: 12pt; font-family: arial" >
-<?php
+    $imgurl = "../../img/DD2.png";
         break;
 }
 
 ?>
+<page backimg="<?php echo $imgurl; ?>" backimgw="100%" backtop="2mm" backbottom="2mm" backleft="15mm" backright="30mm" style="font-size: 12pt; font-family: arial" >
 
     <table style="text-align: left; margin-left: 0px; margin-right: 0px;" width="100%" cellpadding="0" cellspacing="0">
         <tbody>
